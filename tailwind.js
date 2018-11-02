@@ -47,13 +47,10 @@ let colors = {
   'transparent': 'transparent',
 
   'black': '#22292f',
-  'grey-darkest': '#3d4852',
-  'grey-darker': '#606f7b',
-  'grey-dark': '#8795a1',
-  'grey': '#b8c2cc',
-  'grey-light': '#dae1e7',
-  'grey-lighter': '#f1f5f8',
-  'grey-lightest': '#f8fafc',
+  'bl-grey-darkest': '#2b2b2b',
+  'bl-grey-dark': '#6d6d6d',
+  'bl-grey': '#c9c9c9',
+  'bl-grey-ligther': '#f2f2f2',
   'white': '#ffffff',
 
   'red-darkest': '#3b0d0c',
@@ -64,21 +61,10 @@ let colors = {
   'red-lighter': '#f9acaa',
   'red-lightest': '#fcebea',
 
-  'orange-darkest': '#462a16',
-  'orange-darker': '#613b1f',
-  'orange-dark': '#de751f',
-  'orange': '#f6993f',
-  'orange-light': '#faad63',
-  'orange-lighter': '#fcd9b6',
-  'orange-lightest': '#fff5eb',
-
-  'yellow-darkest': '#453411',
-  'yellow-darker': '#684f1d',
-  'yellow-dark': '#f2d024',
+  'bl-yellow': '#F39D2D',
+  'bl-yellow-lighter': '#f6bc35',
+  'bl-yellow-lightest': '#fbdd8a',
   'yellow': '#ffed4a',
-  'yellow-light': '#fff382',
-  'yellow-lighter': '#fff9c2',
-  'yellow-lightest': '#fcfbeb',
 
   'green-darkest': '#0f2f21',
   'green-darker': '#1a4731',
@@ -96,13 +82,9 @@ let colors = {
   'teal-lighter': '#a0f0ed',
   'teal-lightest': '#e8fffe',
 
-  'blue-darkest': '#12283a',
-  'blue-darker': '#1c3d5a',
-  'blue-dark': '#2779bd',
+  'bl-blue': '#0D3952',
+  'bl-blue-light': '#58A3BE',
   'blue': '#3490dc',
-  'blue-light': '#6cb2eb',
-  'blue-lighter': '#bcdefa',
-  'blue-lightest': '#eff8ff',
 
   'indigo-darkest': '#191e38',
   'indigo-darker': '#2f365f',
@@ -111,22 +93,6 @@ let colors = {
   'indigo-light': '#7886d7',
   'indigo-lighter': '#b2b7ff',
   'indigo-lightest': '#e6e8ff',
-
-  'purple-darkest': '#21183c',
-  'purple-darker': '#382b5f',
-  'purple-dark': '#794acf',
-  'purple': '#9561e2',
-  'purple-light': '#a779e9',
-  'purple-lighter': '#d6bbfc',
-  'purple-lightest': '#f3ebff',
-
-  'pink-darkest': '#451225',
-  'pink-darker': '#6f213f',
-  'pink-dark': '#eb5286',
-  'pink': '#f66d9b',
-  'pink-light': '#fa7ea8',
-  'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef',
 }
 
 module.exports = {
@@ -168,9 +134,8 @@ module.exports = {
 
   screens: {
     'sm': '576px',
-    'md': '768px',
+    'md': '769px',
     'lg': '992px',
-    'xl': '1200px',
   },
 
 
@@ -194,6 +159,8 @@ module.exports = {
 
   fonts: {
     'sans': [
+      'Poppins',
+      'Open Sans',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -226,7 +193,8 @@ module.exports = {
       'Liberation Mono',
       'Courier New',
       'monospace',
-    ]
+    ],
+    'body-text': ['Open Sans', 'sans-serif']
   },
 
 
@@ -304,6 +272,7 @@ module.exports = {
   leading: {
     'none': 1,
     'tight': 1.25,
+    'semi-tight': 1.4,
     'normal': 1.5,
     'loose': 2,
   },
@@ -553,6 +522,18 @@ module.exports = {
 
   minWidth: {
     '0': '0',
+    '4': '1rem',
+    '5': '1.25rem',
+    '6': '1.5rem',
+    '8': '2rem',
+    '10': '2.5rem',
+    '12': '3rem',
+    '16': '4rem',
+    '24': '6rem',
+    '32': '8rem',
+    '48': '12rem',
+    '64': '16rem',
+    '1/2': '50%',
     'full': '100%',
   },
 
@@ -594,15 +575,15 @@ module.exports = {
   */
 
   maxWidth: {
+    'unset': 'unset',
+    'xxs': '10rem',
     'xs': '20rem',
     'sm': '30rem',
     'md': '40rem',
     'lg': '50rem',
     'xl': '60rem',
-    '2xl': '70rem',
-    '3xl': '80rem',
-    '4xl': '90rem',
-    '5xl': '100rem',
+    '1/2': '50%',
+    '3/4': '75%',
     'full': '100%',
   },
 
@@ -658,6 +639,7 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
+    '1/2': '50%'
   },
 
 
@@ -862,12 +844,12 @@ module.exports = {
   modules: {
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColors: ['responsive', 'hover', 'focus'],
+    backgroundColors: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: [],
-    borderColors: ['responsive', 'hover', 'focus'],
+    borderColors: ['responsive', 'hover', 'focus',],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidths: ['responsive'],
@@ -880,22 +862,23 @@ module.exports = {
     height: ['responsive'],
     leading: ['responsive'],
     lists: ['responsive'],
-    margin: ['responsive'],
+    margin: ['responsive',],
     maxHeight: ['responsive'],
     maxWidth: ['responsive'],
     minHeight: ['responsive'],
     minWidth: ['responsive'],
     negativeMargin: ['responsive'],
-    opacity: ['responsive'],
+    opacity: ['responsive', 'hover'],
     outline: ['focus'],
     overflow: ['responsive'],
-    padding: ['responsive'],
+    padding: ['responsive', 'focus', 'hover'],
     pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
     shadows: ['responsive', 'hover', 'focus'],
     svgFill: [],
     svgStroke: [],
+    tableLayout: ['responsive'],
     textAlign: ['responsive'],
     textColors: ['responsive', 'hover', 'focus'],
     textSizes: ['responsive'],
@@ -926,7 +909,7 @@ module.exports = {
 
   plugins: [
     require('tailwindcss/plugins/container')({
-      // center: true,
+      center: true,
       // padding: '1rem',
     }),
   ],
